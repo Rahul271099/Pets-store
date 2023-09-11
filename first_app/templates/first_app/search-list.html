@@ -1,0 +1,52 @@
+{% include 'base/header.html' %} {% block content %}
+<div class="container">
+  <h4 style="text-align: center; margin-top: 20px; margin-bottom: 20px">
+    Search results
+  </h4>
+  {% if query|length < 1 %}
+  <p>Sorry please enter valid query</p>
+  <p>Try to find some other keywords</p>
+  <ul>
+    <li>dogs</li>
+    <li>cats</li>
+    <li>species of cat</li>
+  </ul>
+  {% elif data %}
+  <div class="row">
+    {% for obj in data %}
+    <div class="col-lg-4">
+      <div
+        class="card shadow p-3 mb-5 bg-body-tertiary rounded border-0"
+        style="min-height: 500px; cursor: pointer"
+      >
+        <div class="card-body">
+          <a
+            href="{% url 'pet_details' pk=obj.pk %}"
+            target="_blank"
+            style="text-decoration: none; color: black"
+            ><h2 style="font-size: 25px">{{ obj.name }}</h2></a
+          >
+          <img
+            src="{{ obj.image.url }}"
+            alt="pet_image"
+            class="card-img-top rounded border-opacity-25 mb-3 mt-2"
+            style="width: 221px; height: 149px; object-fit: contain"
+          />
+          <p class="card-text">{{ obj.description }}</p>
+          <p><b>price is : &#x20B9; {{ obj.price }}</b></p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p>Sorry your query <strong>{{ query }}</strong> not found in documents</p>
+  <p>Try to find some other keywords</p>
+  <ul>
+    <li>dogs</li>
+    <li>cats</li>
+    <li>species of cat</li>
+  </ul>
+  {% endif %}
+</div>
+{% endblock %} {% include 'base/footer.html' %}

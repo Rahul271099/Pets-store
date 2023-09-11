@@ -1,0 +1,18 @@
+{% include 'base/header.html' %}
+    {% block content %}
+            <h4>Account Details:</h4>
+            <div class="orders">
+                <table class="table">
+                    <thead>
+                        <th>UserName</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </thead>
+                    <tbody>
+                        <td>{{ acc_data.username }}</td>
+                        <td>{{ acc_data.first_name }}</td>
+                        <td>{{ acc_data.email }}</td>
+                    </tbody>
+                </table>
+            </div>
+    {% endblock content %}

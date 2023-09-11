@@ -1,0 +1,32 @@
+{% include 'base/header.html' %} {% block content %}
+<div class="container">
+  <h4 style="text-align: center; margin-top: 20px; margin-bottom: 20px">
+    Pets List Data
+  </h4>
+  <div class="row">
+    {% for obj in pets_d %}
+    <div class="col-lg-4">
+      <div
+        class="card shadow p-3 mb-5 bg-body-tertiary rounded border-0"
+        style="min-height: 500px; cursor: pointer"
+      >
+        <a href="{% url 'pet_details' pk=obj.pk %}"  target="_blank" style="text-decoration: none; color: black">
+          <div class="card-body">
+            <h2 style="font-size: 25px">{{ obj.name }}</h2>
+            <img
+              src="{{ obj.image.url }}"
+              alt="pet_image"
+              class="card-img-top rounded border-opacity-25 mb-3 mt-2"
+              style="width: 221px; height: 149px; object-fit: contain"
+            />
+            <p class="card-text">{{ obj.description }}</p>
+            <p><b>price is : &#x20B9; {{ obj.price }}</b></p>
+          </div>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %} {% include 'base/footer.html' %}
+

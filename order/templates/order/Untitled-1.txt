@@ -1,0 +1,70 @@
+// Capture result Object {
+//   "id": "6V4203491U524162R",
+//   "intent": "CAPTURE",
+//   "status": "COMPLETED",
+//   "purchase_units": [
+//     {
+//       "reference_id": "default",
+//       "amount": {
+//         "currency_code": "USD",
+//         "value": "5000.00"
+//       },
+//       "payee": {
+//         "email_address": "sb-a4rx326864142@business.example.com",
+//         "merchant_id": "VM8XUX9LMWHBJ"
+//       },
+//       "soft_descriptor": "PAYPAL *TEST STORE",
+//       "shipping": {
+//         "name": {
+//           "full_name": "John Doe"
+//         },
+//         "address": {
+//           "address_line_1": "19/A Nitysukhadam, Dr.s.s. rao road lalbaug-400012",
+//           "address_line_2": "orange street",
+//           "admin_area_2": "Mumbai",
+//           "admin_area_1": "AL",
+//           "postal_code": "35004",
+//           "country_code": "US"
+//         }
+//       },
+//       "payments": {
+//         "captures": [
+//           {
+//             "id": "3PJ419279W035172D",
+//             "status": "COMPLETED",
+//             "amount": {
+//               "currency_code": "USD",
+//               "value": "5000.00"
+//             },
+//             "final_capture": true,
+//             "seller_protection": {
+//               "status": "NOT_ELIGIBLE"
+//             },
+//             "create_time": "2023-08-03T05:54:30Z",
+//             "update_time": "2023-08-03T05:54:30Z"
+//           }
+//         ]
+//       }
+//     }
+//   ],
+//   "payer": {
+//     "name": {
+//       "given_name": "John",
+//       "surname": "Doe"
+//     },
+//     "email_address": "rahulmunj5@gmail.com",
+//     "payer_id": "XSRB6U5KLU2DJ",
+//     "address": {
+//       "country_code": "US"
+//     }
+//   },
+//   "create_time": "2023-08-03T05:49:29Z",
+//   "update_time": "2023-08-03T05:54:30Z",
+//   "links": [
+//     {
+//       "href": "https://api.sandbox.paypal.com/v2/checkout/orders/6V4203491U524162R",
+//       "rel": "self",
+//       "method": "GET"
+//     }
+//   ]
+// }

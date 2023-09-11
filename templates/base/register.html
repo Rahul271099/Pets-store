@@ -1,0 +1,112 @@
+{% include 'base/header.html' %} {% block content %}
+<form method="post" class="register-form">
+  {% csrf_token %}
+  <div class="row">
+    <div class="col-md-12">
+        {% if form_data.errors %}
+            {% for fields in form_data %}
+                {% for error in fields.errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}    
+    </div>
+    <div class="col-md-6">
+      <div class="form-group postion-realtive">
+        <label>Enter your first name: <span class="text-danger">*</span></label>
+        {{ form_data.first_name }}
+      </div>
+      {% if form_data.first_name.errors %}
+        {% for error in first_name.errors  %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <div class="col-md-6">
+      <div class="form-group postion-realtive">
+        <label>Enter your last name: <span class="text-danger">*</span></label>
+        {{ form_data.last_name }}
+      </div>
+      {% if form_data.last_name.errors %}
+        {% for error in last_name.errors  %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <div class="col-md-6">
+      <div class="form-group postion-realtive">
+        <label>Enter your Username: <span class="text-danger">*</span></label>
+        {{ form_data.username }}
+      </div>
+      {% if form_data.username.errors %}
+        {% for error in username.errors  %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <div class="col-md-6">
+      <div class="form-group postion-realtive">
+        <label>Enter your Email: <span class="text-danger">*</span></label>
+        {{ form_data.email }}
+      </div>
+      {% if form_data.email.errors %}
+        {% for error in email.errors  %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <div class="col-md-6">
+      <div class="form-group postion-realtive">
+        <label>Enter your Password: <span class="text-danger">*</span></label>
+        {{ form_data.password1 }}
+      </div>
+      {% if form_data.password1.errors %}
+        {% for error in password1.errors  %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <div class="col-md-6">
+      <div class="form-group postion-realtive">
+        <label>Confirm Your password1: <span class="text-danger">*</span></label>
+        {{ form_data.password2 }}
+      </div>
+      {% if form_data.password2.errors %}
+        {% for error in password2.errors  %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <div class="col-md-6">
+      <div class="form-group postion-realtive">
+          {{ form_data.check }}
+        <label>Accept <a href="#">terms and conditions</a></label>
+      </div>
+      {% if form_data.first_name.errors %}
+        {% for error in first_name.errors  %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <div class="col-md-12">
+      <button type="submit" class="btn btn-primary w-50">Submit</button>
+    </div>
+  </div>
+</form>
+{% endblock %}
